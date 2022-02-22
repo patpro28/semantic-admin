@@ -1,12 +1,14 @@
 {% load i18n admin_urls static admin_modify %}
+<div class='ui segment'>
 <div class="js-inline-admin-formset inline-group" id="{{ inline_admin_formset.formset.prefix }}-group"
      data-inline-type="tabular"
      data-inline-formset="{{ inline_admin_formset.inline_formset_data }}">
   <div class="tabular inline-related {% if forloop.last %}last-related{% endif %}">
 {{ inline_admin_formset.formset.management_form }}
   
-{# BEGIN CUSTOMIZATION <fieldset class="module {{ inline_admin_formset.classes }}"> #}
-<h2 style="margin-left: 1rem;" >{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}</h2>
+{# BEGIN CUSTOMIZATION #}
+<fieldset class="module {{ inline_admin_formset.classes }}"> 
+<legend><h2 style="margin-left: 1rem;" >{{ inline_admin_formset.opts.verbose_name_plural|capfirst }}</h2></legend>
 {# END CUSTOMIZATION #}
 
  {{ inline_admin_formset.formset.non_form_errors }}
@@ -79,7 +81,8 @@
    {% endfor %}
    </tbody>
  </table>
-
+</fieldset>
 {# BEGIN CUSTOMIZATION </fieldset> END CUSTOMIZATION #}
   </div>
+</div>
 </div>

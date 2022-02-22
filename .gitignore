@@ -1,8 +1,9 @@
 *.pyc
 .env
+venv
 db.sqlite3
-/dist
-/site
-/demo/static
-/demo/media
-/demo/demo_app/migrations
+dist
+site
+demo/static
+demo/media
+demo/demo_app/migrations
