@@ -88,11 +88,22 @@ function getCalendarOptions(type, languageCode, calendarOptions, text) {
     return intlFormatter.format(date)
   }
 
+  function datetimeFormatter(date) {
+    if (!date) return '';
+    const opt = {
+      hour: 'numeric', minute: 'numeric', second: 'numeric',
+      hour12: false,
+    };
+    const dateFormat = new Intl.DateTimeFormat(languageCode);
+    const timeFormat = new Intl.DateTimeFormat(languageCode, opt);
+    return dateFormat(date) + ' ' + timeFormat(date);
+  }
+
   let formatter;
   if (type == 'datetime') { 
     formatter = { 
       datetime: function(date, settings, forCalendar) {  
-        return calendarFormatter(date)
+        return datetimeFormatter(date)
       }
     }
   } else if (type == 'date') {
