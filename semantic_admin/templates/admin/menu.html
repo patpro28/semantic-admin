@@ -5,7 +5,7 @@
   <div class="ui large header">
     {% block branding %}
       <a class="item" style="text-align: center;" href="{% url 'admin:index' %}">
-        <img style="width: 80%; margin: auto auto 0.1em;" src="{% static "semantic_admin/django-white.svg" %}" alt="{{ site_header|default:_('Django administration') }}" />
+        <img style="width: 80%; margin: auto auto 0.1em;" src="{% static "semantic_admin/django-white.svg" %}" alt="{{ site_header|default:_('Emath administration') }}" />
         {% trans "administration" %}
       </a>
       </a>
@@ -50,7 +50,7 @@
       </div>
     
       {% block userlinks %}
-      <div class="menu">
+      <div class="ui vertical inverted menu">
         {% if site_url %}
           <a class="item" href="{{ site_url }}">{% trans 'View site' %}</a>
         {% endif %}
