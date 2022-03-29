@@ -96,7 +96,7 @@ function getCalendarOptions(type, languageCode, calendarOptions, text) {
     };
     const dateFormat = new Intl.DateTimeFormat(languageCode);
     const timeFormat = new Intl.DateTimeFormat(languageCode, opt);
-    return dateFormat(date) + ' ' + timeFormat(date);
+    return dateFormat.format(date) + ' ' + timeFormat.format(date);
   }
 
   let formatter;
